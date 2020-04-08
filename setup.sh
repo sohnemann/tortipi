@@ -90,3 +90,4 @@ chown debian-tor /var/log/tor/notices.log
 chmod 644 /var/log/tor/notices.log
 service tor start
 update-rc.d tor enable
+rfkill unblock wlan
