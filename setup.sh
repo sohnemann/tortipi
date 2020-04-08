@@ -91,7 +91,7 @@ chown debian-tor /var/log/tor/notices.log
 chmod 644 /var/log/tor/notices.log
 
 # starting tor and make it available on start
-systemctl start tor
+systemctl start tor@default.service
 systemctl enable tor
 
 # unblock wifi on raspberry pi 3 b+
