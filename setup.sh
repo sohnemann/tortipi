@@ -35,10 +35,11 @@ fi
 echo "Installing various packages..."
 # Package information
 # tor: for setting up the system using Tor
+# hostapd: sets up the wifi hotspot.
 # isc-dhcp-server: This is required to allow the raspberry pi to give local ip to connecting devices.
 # iptables-persistent: Saving the state of Iptables for restoring during bootup
-# hostapd: sets up the wifi hotspot.
-apt-get install -y tor hostapd isc-dhcp-server iptables-persistent
+# nyx: Nyx is a command-line monitor for Tor.
+apt-get install -y tor hostapd isc-dhcp-server iptables-persistent nyx
 
 
 #Configuration change in DHCP server, make it authoritative so as to make it give IP address to connecting devices.
