@@ -14,7 +14,7 @@ Let `TorTiPi` do it.
 ---
 TorTiPi setups everything for you. But How ??  
 ```bash
-git clone https://github.com/r0hi7/tortipi.git
+git clone git@github.com:sohnemann/tortipi.git
 cd tortipi
 chmod +x setup.sh
 ./setup.sh
