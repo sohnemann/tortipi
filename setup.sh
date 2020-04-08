@@ -50,8 +50,8 @@ cat dhcp.config >> /etc/dhcp/dhcpd.conf
 
 echo 'INTERFACESv4="wlan0"' > /etc/default/isc-dhcp-server
 rm /var/run/dhcpd.pid
-service isc-dhcp-server stop
-service isc-dhcp-server start
+systemctl stop isc-dhcp-server
+systemctl start isc-dhcp-server
 
 #Assigning the static IP to the wlan interface
 ifconfig wlan0 down
@@ -85,10 +85,14 @@ cat >> /etc/rc.local << EOF
 iptables-restore < /etc/iptables.conf
 EOF
 
-
+# logging for tor
 touch /var/log/tor/notices.log
 chown debian-tor /var/log/tor/notices.log
 chmod 644 /var/log/tor/notices.log
-service tor start
-update-rc.d tor enable
+
+# starting tor and make it available on start
+systemctl start tor
+systemctl enable tor
+
+# unblock wifi on raspberry pi 3 b+
 rfkill unblock wlan
