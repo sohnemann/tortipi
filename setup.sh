@@ -71,6 +71,7 @@ sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 cat tor.config > /etc/tor/torrc
 iptables -F
 iptables -t nat -F
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 22 -j REDIRECT --to-ports 22
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 22 -j REDIRECT --to-ports 22
 iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
