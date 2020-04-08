@@ -26,7 +26,7 @@ read -p "Press [y/n] to continue..." ans
 if [ $ans == "y" ];then
     apt-get update -y
 fi
-echo -e "${GREEN}Upgarding...${NC}"
+echo -e "${GREEN}Upgrading...${NC}"
 read -p "Press [y/n] to continue..." ans
 if [ $ans == "y" ];then
     apt-get upgrade -y
